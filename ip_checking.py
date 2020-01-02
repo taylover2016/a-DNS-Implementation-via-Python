@@ -22,8 +22,12 @@ def ip_checking(ip_list, domain, available_ip_list):
             http_response = http_checker.getresponse()
             if http_response.status == 200: # Current ip is capable of being linked
                 available_ip_list.append(ip)
+                print(ip, "is an available IP")
+            else:
+                print(ip, "is an unavailable IP:", http_response.reason)
         except socket.timeout as error:
             print(ip, "is an unavailable IP:", error, "\n")
             return
+    print("\n")
     return available_ip_list
     
