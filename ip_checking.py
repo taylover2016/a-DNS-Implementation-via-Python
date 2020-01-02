@@ -30,4 +30,3 @@ def ip_checking(ip_list, domain, available_ip_list):
             return
     print("\n")
     return available_ip_list
-    
